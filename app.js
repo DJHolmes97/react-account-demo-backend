@@ -35,12 +35,7 @@ app.post("/register", jsonParser, async (req, res, next) => {
       users.push(newUser);
       console.log("User list", users);
 
-      res.json({
-        id: newUser.id,
-        firstName: newUser.firstName,
-        lastName: newUser.lastName,
-        email: newUser.email,
-      });
+      res.send("Registered successfully!");
     } else {
       res.send(403, { error: "User already exists!" });
     }
